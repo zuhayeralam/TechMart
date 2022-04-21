@@ -18,8 +18,8 @@ import { listProductDetails } from '../actions/productActions';
 
 const ProductScreen = () => {
   const params = useParams();
-  const history = useNavigate();
-  const [qty, setQty] = useState(0);
+  const navigate = useNavigate();
+  const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
@@ -28,7 +28,7 @@ const ProductScreen = () => {
   }, [dispatch, params]);
 
   const addToCartHandler = () => {
-    history(`/cart/${params.id}?qty=${qty}`);
+    navigate(`/cart/${params.id}?qty=${qty}`);
   };
 
   return (
