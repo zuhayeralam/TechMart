@@ -1,4 +1,5 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
+import bcrypt from 'bcryptjs';
 
 const userSchema = mongoose.Schema(
   {
@@ -24,8 +25,23 @@ const userSchema = mongoose.Schema(
   {
     timestamps: true,
   }
-)
+);
 
-const User = mongoose.model('User', userSchema)
+userSchema.methods.matchPassword = async function (enteredPassword) {
+  return await bcrypt.compare(enteredPassword, this.password);
+};
 
-export default User
+//this middleware runs before calling create in user controller
+userSchema.pre('save', async function (next) {
+  //Don't want to fire encryption if update user request don't contain password
+  if (!this.isModified('password')) {
+    next();
+  }
+
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+});
+
+const User = mongoose.model('User', userSchema);
+
+export default User;
