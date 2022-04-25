@@ -11,6 +11,7 @@ import CartScreen from './screens/CartScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import ShippingScreen from './screens/ShippingScreen';
+import PaymentScreen from './screens/PaymentScreen';
 
 const App = () => {
   const userLogin = useSelector((state) => state.userLogin);
@@ -26,6 +27,7 @@ const App = () => {
                 path='/shipping'
                 element={userInfo ? <ShippingScreen /> : <LoginScreen />}
               />
+              <Route path='/payment' element={<PaymentScreen />} />
               <Route path='/login' element={<LoginScreen />} />
               <Route path='/register' element={<RegisterScreen />} />
               <Route path='/profile' element={<ProfileScreen />} />
