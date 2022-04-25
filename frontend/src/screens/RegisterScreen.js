@@ -25,7 +25,7 @@ const RegisterScreen = () => {
 
   useEffect(() => {
     if (userInfo) {
-      navigate.push(redirect);
+      navigate(redirect);
     }
   }, [navigate, userInfo, redirect]);
 
