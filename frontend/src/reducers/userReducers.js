@@ -38,8 +38,6 @@ export const userRegisterReducer = (state = {}, action) => {
       return { loading: false, userInfo: action.payload };
     case USER_REGISTER_FAIL:
       return { loading: false, error: action.payload };
-    case USER_DETAILS_RESET:
-      return { user: {} };
     default:
       return state;
   }
@@ -53,6 +51,8 @@ export const userDetailsReducer = (state = { user: {} }, action) => {
       return { loading: false, user: action.payload };
     case USER_DETAILS_FAIL:
       return { loading: false, error: action.payload };
+    case USER_DETAILS_RESET:
+      return { user: {} };
     default:
       return state;
   }
