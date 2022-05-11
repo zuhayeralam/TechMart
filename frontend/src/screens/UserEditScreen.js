@@ -10,7 +10,7 @@ import { USER_UPDATE_RESET } from '../constants/userConstants';
 
 const UserEditScreen = () => {
   const params = useParams();
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [isAdmin, setIsAdmin] = useState(false);
@@ -43,7 +43,7 @@ const UserEditScreen = () => {
   }, [dispatch, navigate, params.id, user, successUpdate]);
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(updateUser({ _id: userId, name, email, isAdmin }));
+    dispatch(updateUser({ _id: params.id, name, email, isAdmin }));
   };
 
   return (
