@@ -18,6 +18,7 @@ import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
 import ProductListScreen from './screens/ProductListScreen';
 import ProductEditScreen from './screens/ProductEditScreen';
+import OrderListScreen from './screens/OrderListScreen';
 
 const App = () => {
   const userLogin = useSelector((state) => state.userLogin);
@@ -51,6 +52,7 @@ const App = () => {
                 path='/admin/product/:id/edit'
                 element={<ProductEditScreen />}
               />
+              <Route path='/admin/orderlist' element={<OrderListScreen />} />
               <Route path='/cart' element={<CartScreen />} />
               <Route path='/' element={<HomeScreen />} exact />
             </Routes>
