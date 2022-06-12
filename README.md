@@ -1,2 +1,3 @@
-# MERN-Shopping-App
- Full Stack eCommerce Application
+# TechMart
+
+Full Stack eCommerce Application

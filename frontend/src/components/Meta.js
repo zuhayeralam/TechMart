@@ -12,7 +12,7 @@ const Meta = ({ title, description, keywords }) => {
 };
 
 Meta.defaultProps = {
-  title: 'NewGen Tech',
+  title: 'TechMart',
   description: 'Tech Products for sale',
   keywords: 'Latest models, best performance, best products, up to date',
 };
