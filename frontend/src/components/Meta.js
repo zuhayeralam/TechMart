@@ -12,9 +12,9 @@ const Meta = ({ title, description, keywords }) => {
 };
 
 Meta.defaultProps = {
-  title: 'Welcome To MernShop',
-  description: 'We sell the best products for cheap',
-  keywords: 'best products, good products',
+  title: 'NewGen Tech',
+  description: 'Tech Products for sale',
+  keywords: 'Latest models, best performance, best products, up to date',
 };
 
 export default Meta;

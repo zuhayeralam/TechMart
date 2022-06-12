@@ -32,7 +32,7 @@ const LoginScreen = () => {
 
   return (
     <FormContainer>
-      <h1>Sign In</h1>
+      <h1 className='text-center'>Sign In</h1>
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
@@ -55,10 +55,11 @@ const LoginScreen = () => {
             onChange={(e) => setPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
-
-        <Button type='submit' variant='primary'>
-          Sign In
-        </Button>
+        <div className='mt-2 text-center d-grid'>
+          <Button type='submit' variant='primary' className='btn-lg'>
+            Sign In
+          </Button>
+        </div>
       </Form>
 
       <Row className='py-3'>

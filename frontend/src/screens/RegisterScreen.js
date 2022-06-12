@@ -40,7 +40,7 @@ const RegisterScreen = () => {
 
   return (
     <FormContainer>
-      <h1>Sign Up</h1>
+      <h1 className='text-center'>Sign Up</h1>
       {message && <Message variant='danger'>{message}</Message>}
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
@@ -85,9 +85,11 @@ const RegisterScreen = () => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type='submit' variant='primary'>
-          Register
-        </Button>
+        <div className='mt-2 text-center d-grid'>
+          <Button type='submit' variant='primary'>
+            Register
+          </Button>
+        </div>
       </Form>
 
       <Row className='py-3'>

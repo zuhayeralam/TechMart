@@ -28,7 +28,7 @@ const PaymentScreen = ({ history }) => {
   return (
     <FormContainer>
       <CheckoutSteps step1 step2 step3 />
-      <h1>Payment Method</h1>
+      <h1 className='text-center'>Payment Method</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group>
           <Form.Label as='legend'>Select Method</Form.Label>
@@ -52,10 +52,11 @@ const PaymentScreen = ({ history }) => {
             ></Form.Check> */}
           </Col>
         </Form.Group>
-
-        <Button type='submit' variant='primary'>
-          Continue
-        </Button>
+        <div className='mt-2 text-center'>
+          <Button type='submit' variant='primary'>
+            Continue
+          </Button>
+        </div>
       </Form>
     </FormContainer>
   );

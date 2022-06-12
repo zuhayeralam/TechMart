@@ -26,7 +26,7 @@ const ShippingScreen = () => {
   return (
     <FormContainer>
       <CheckoutSteps step1 step2 />
-      <h1>Shipping</h1>
+      <h1 className='text-center'>Shipping</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='address'>
           <Form.Label>Address</Form.Label>
@@ -71,10 +71,11 @@ const ShippingScreen = () => {
             onChange={(e) => setCountry(e.target.value)}
           ></Form.Control>
         </Form.Group>
-
-        <Button type='submit' variant='primary'>
-          Continue
-        </Button>
+        <div className='mt-2 text-center'>
+          <Button type='submit' variant='primary'>
+            Continue
+          </Button>
+        </div>
       </Form>
     </FormContainer>
   );

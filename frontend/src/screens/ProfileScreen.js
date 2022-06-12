@@ -104,10 +104,11 @@ const ProfileScreen = () => {
               onChange={(e) => setConfirmPassword(e.target.value)}
             ></Form.Control>
           </Form.Group>
-
-          <Button type='submit' variant='primary'>
-            Update
-          </Button>
+          <div className='mt-2 text-center d-grid'>
+            <Button type='submit' variant='primary'>
+              Update
+            </Button>
+          </div>
         </Form>
       </Col>
       <Col md={9}>
@@ -150,7 +151,7 @@ const ProfileScreen = () => {
                   </td>
                   <td>
                     <LinkContainer to={`/order/${order._id}`}>
-                      <Button className='btn-sm' variant='light'>
+                      <Button className='btn-sm' variant='primary'>
                         Details
                       </Button>
                     </LinkContainer>
