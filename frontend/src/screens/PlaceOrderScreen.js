@@ -6,11 +6,18 @@ import Message from '../components/Message';
 import CheckoutSteps from '../components/CheckoutSteps';
 import { createOrder } from '../actions/orderActions';
 import { ORDER_CREATE_RESET } from '../constants/orderConstants';
+import { USER_DETAILS_RESET } from '../constants/userConstants';
 
 const PlaceOrderScreen = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
+
+  if (!cart.shippingAddress.address) {
+    navigate('/shipping');
+  } else if (!cart.paymentMethod) {
+    navigate('/payment');
+  }
 
   //   Calculate prices
   const addDecimals = (num) => {
@@ -33,6 +40,7 @@ const PlaceOrderScreen = () => {
   useEffect(() => {
     if (success) {
       navigate(`/order/${order._id}`);
+      dispatch({ type: USER_DETAILS_RESET });
       dispatch({ type: ORDER_CREATE_RESET });
     }
     // eslint-disable-next-line
