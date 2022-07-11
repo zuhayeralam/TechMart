@@ -15,6 +15,16 @@ const storage = multer.diskStorage({
   },
 });
 
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, 'backend/uploads/');
+//   },
+//   filename: function (req, file, cb) {
+//     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+//     cb(null, file.fieldname + '-' + uniqueSuffix);
+//   },
+// });
+
 function checkFileType(file, cb) {
   const filetypes = /jpg|jpeg|png/;
   const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
